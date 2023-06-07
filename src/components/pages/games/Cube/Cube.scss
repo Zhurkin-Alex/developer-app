@@ -1,0 +1,234 @@
+@import '../styles/mixins/media';
+@import '../styles/variables';
+
+
+.cube {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  @include desktop {
+    margin-top: 40px;
+  }
+
+  &__dice_box {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: max-content;
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+  }
+
+  &__title_number {
+    max-width: 300px;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__question {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 38px;
+    text-align: center;
+    color: $white;
+  }
+
+  &__container {
+    max-width: 95%;
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 24px;
+    position: relative;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: $green-white;
+    margin-top: 6px;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__text {
+    margin-top: 5px;
+    font-size: 12px;
+    height: 15px;
+    text-align: center;
+    color: $green-white;
+  }
+
+  &__number_item {
+    width: 65px;
+    height: 65px;
+  }
+
+  &__title_true {
+    color: $red;
+    animation-name: scale-animate;
+    animation-duration: 1s;
+  }
+
+  @keyframes scale-animate {
+    0% {
+      transform: scale(1, 1);
+    }
+
+    50% {
+      transform: scale(1.26, 1.26);
+    }
+
+    100% {
+      transform: scale(1, 1, 1);
+    }
+  }
+
+  &__btn_next {
+    justify-content: center;
+    height: auto;
+    width: max-content;
+    min-width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    background: $green-white;
+    color: $dark;
+    border: 1px solid $rgb-green;
+    border-radius: 654px;
+    padding: 1rem;
+    animation: animate 1500ms infinite;
+    box-sizing: border-box;
+  }
+
+  &__btn_repeat {
+    justify-content: center;
+    height: auto;
+    width: max-content;
+    min-width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    background: $dark;
+    color: $white;
+    border: 1px solid $rgb-green;
+    border-radius: 654px;
+    padding: 1rem;
+    box-sizing: border-box;
+    margin-right: 10px;
+  }
+
+  @keyframes animate {
+    0% {
+      background-color: $rgb-green;
+      box-shadow: 0 0 5px $rgb-green;
+    }
+
+    50% {
+      background-color: $rgb-green-white;
+      box-shadow: 0 0 15px $rgb-green-white;
+    }
+
+    100% {
+      background-color: $rgb-green;
+      box-shadow: 0 0 5px $rgb-green;
+    }
+  }
+
+  &__btn_roll {
+    height: auto;
+    width: 150px;
+    color: $dark;
+    border: none;
+    padding: 1rem;
+    border-radius: 654px;
+  }
+
+  &__btn_active{
+    transition: $transition_background;
+    background-color: $rgb-green;
+    cursor: pointer;
+  }
+
+  &__btn_disable {
+    background-color: $rgb-grey;
+  }
+}
+
+@include desktop {
+  .cube {
+    &__title_number{
+      max-width: 422px;
+    }
+
+    &__box_game {
+      display: flex;
+      width: 810px;
+      align-items: center;
+    }
+
+    &__container {
+      margin-top: 70px;
+    }
+
+    &__question {
+      font-size: 58px;
+      line-height: 75px;
+    }
+
+    &__title{
+      margin-top: 25px;
+      font-size: 20px;
+    }
+
+    &__box {
+      margin-top: 60px;
+    }
+
+    &__number_item {
+      width: 95px;
+      height: 95px;
+    }
+
+    &__btn_roll {
+      width: 387px;
+      font-size: 44.2025px;
+      line-height: 52px;
+      padding: 20px;
+    }
+
+    &__btn_next {
+      width: 300px;
+      font-size: 40px;
+      line-height: 52px;
+      padding: 20px;
+    }
+
+    &__btn_repeat {
+      width: 300px;
+      font-size: 40px;
+      line-height: 52px;
+      padding: 20px;
+    }
+
+    &__text {
+      margin-top: 10px;
+    }
+  }
+}

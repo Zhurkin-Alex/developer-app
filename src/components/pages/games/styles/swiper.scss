@@ -1,0 +1,114 @@
+@import 'node_modules/swiper/swiper';
+@import './mixins/media';
+@import './variables';
+
+$desktop-width: 1024px;
+$transition_background: background-color 0.12s ease-out;
+
+.swiper {
+  max-width: 68px;
+  height: 68px;
+  position: initial;
+}
+
+.swiper-slide {
+  color: $aqua;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-button-prev {
+  width: 68px;
+  height: 68px;
+  background-color: $white;
+  position: absolute;
+  top: 0;
+  left: 25px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: $transition_background;
+}
+
+.swiper-button-prev:hover {
+  background-color: $green-white;
+}
+
+.swiper-button-prev::before {
+  content: '';
+  background-image: url('../Cube/img/left.svg');
+  color: $dark;
+  font-size: 30px;
+  height: 18px;
+  width: 11px;
+  @media screen and (min-width: 1024px) {
+    height: 26px;
+    width: 15px;
+    background-size: 15px 26px;
+  }
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-size: 11px 18px;
+  background-repeat: no-repeat;
+}
+
+.swiper-button-next {
+  border-radius: 999px;
+  width: 68px;
+  height: 68px;
+  background-color: $white;
+  position: absolute;
+  top: 0;
+  right: 25px;
+  transition: $transition_background;
+  cursor: pointer;
+}
+
+.swiper-button-next:hover {
+  background-color: $green-white;
+}
+
+.swiper-button-next::before {
+  content: '';
+  background-image: url('../Cube/img/right.svg');
+  color: $dark;
+  font-size: 30px;
+  height: 18px;
+  width: 11px;
+  @media screen and (min-width: 1024px) {
+    height: 26px;
+    width: 15px;
+    background-size: 15px 26px;
+  }
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-size: 11px 18px;
+  background-repeat: no-repeat;
+}
+
+.swiper-backface-hidden .swiper-slide {
+  margin-top: 1.5px;
+}
+
+@include desktop {
+  .swiper {
+    height: 100px;
+    max-width: 100px;
+
+    &-button-prev {
+      height: 100px;
+      width: 100px;
+    }
+
+    &-button-next {
+      height: 100px;
+      width: 100px;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.header {
+    padding: 15px 0;
+    background-color: aliceblue;
+  
+    &__items {
+      display: flex;
+      justify-content: space-around;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  
+    &__link a {
+      color: #000000
+    }
+
+    .active-link {
+        color: #9d205d
+    }
+}
+
