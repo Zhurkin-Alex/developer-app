@@ -13,7 +13,7 @@ import RequireAuth from '../../hoc/RequireAuth';
 import { AuthProvider } from '../../hoc/AuthProvider';
 import Pokemons from '../pages/Pokemons/Pokemons';
 import AboutGames from '../navigation/AboutGames/AboutGames';
-import Cube from '../pages/games/Cube/Cube';
+// import Cube from '../pages/games/Cube/Cube';
 
 
 const router = createBrowserRouter(createRoutesFromElements(
@@ -37,7 +37,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path="posts/:id/edit" element={<EditPost />} />
     <Route path="games/*" element={<AboutGames />}> 
       {/* вложенные компоненты */}
-      <Route path="game_1" element={<Cube />}/>
+      {/* <Route path="game_1" element={<Cube />}/> */}
       <Route path="game_2" element={<p>It`s component - Our team</p>}/>
     </Route>
     <Route path="*" element={<NotFooundPage />} />

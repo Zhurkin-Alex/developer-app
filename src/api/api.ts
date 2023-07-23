@@ -1,5 +1,6 @@
 let url = 'http://localhost:4000/graphql'; // Замените на адрес вашего GraphQL сервера
 const PRODUCTION = process.env.NODE_ENV === 'production'
+console.log(process.env.NODE_ENV)
 if (PRODUCTION) {
     url = 'https://stunning-phoenix-5ca9f7.netlify.app/graphql'
 }
