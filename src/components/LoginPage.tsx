@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { createUser } from '../api/api';
 import { useAuth } from '../hook/useAuth';
 
 function LoginPage() {
@@ -10,12 +11,20 @@ function LoginPage() {
 
     const fromPage = locate.state?.from?.pathname || '/'
 
-    const handleSubmit = (event:any)=> {
+    const handleSubmit = async(event:any)=> {
         event.preventDefault()
         const form = event.target
-        const user = form.username.value
+        const user = 'Alex'
+        const email = form.username.value
 
-        signIn(user, ()=> navigate(fromPage, {replace:true}))
+        try {
+            const newUser = await createUser(user, email);
+            console.log('New user created:', newUser);
+            signIn(user, () => navigate(fromPage, { replace: true }));
+          } catch (error) {
+            console.error('Error creating user:', error);
+            // Обработка ошибки, если не удалось создать пользователя
+          }
     }
     return (
         <div>
