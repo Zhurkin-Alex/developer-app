@@ -251,7 +251,7 @@ function Cube() {
           <div className='cube__box'>
             {isUserPress && buttonRepeat} {button}
           </div>
-          <p className='cube__text'>{buttonText || ''}</p>
+          {/* <p className='cube__text'>{buttonText || ''}</p> */}
         </div>
       </div>
     </div>

@@ -18,7 +18,11 @@ import Cube from '../pages/games/Cube/Cube';
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={<Layout />}>
-    <Route index element={<Home />} />
+    <Route index element={
+          <RequireAuth>
+            <Home />
+          </RequireAuth>
+          }  loader={blogLoader}  />
     <Route path="about/*" element={<AboutPage />}> 
       {/* вложенные компоненты */}
       <Route path="contacs" element={<p>It`s component - Our contacs</p>}/>
@@ -27,11 +31,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path="pokemons" element={<Pokemons />} /> 
     {/* два адреcа на одну страницу без сохранения в истории */}
     <Route path="about-us" element={<Navigate to={'/about'} replace/>} />
-    <Route path="posts" element={
-      <RequireAuth>
-        <Posts />
-      </RequireAuth>
-    } loader={blogLoader} />
+    <Route path="posts" element={<Posts />} loader={blogLoader} />
     <Route path="posts/:id" element={<SinglePage />}/>
     <Route path="posts/:id/edit" element={<EditPost />} />
     <Route path="login" element={<LoginPage />} />

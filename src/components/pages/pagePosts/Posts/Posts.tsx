@@ -1,6 +1,5 @@
 // import React, { useEffect, useState } from 'react';
-import { Link, useLoaderData, useNavigate, useSearchParams } from 'react-router-dom';
-import { useAuth } from '../../../../hook/useAuth';
+import { Link, useLoaderData, useSearchParams } from 'react-router-dom';
 import BlogFilters from '../BlogFilters/BlogFilters';
 
 interface Posts {
@@ -12,11 +11,9 @@ interface Posts {
 function Posts():any {
     // const [postItem, setPosts] = useState([])
     const postItem = useLoaderData() as Posts[]
-    // console.warn('postItems', postItems)
-    const {signOut} = useAuth()
+
     const [searchParams, setSearchParams] = useSearchParams()
 
-    const navigate = useNavigate()
 
     const postQuery = searchParams.get('post') || ''
     //URL.ru/poasts?post=abs (abs)
@@ -35,7 +32,6 @@ function Posts():any {
 
     return (
         <div>
-            <button onClick={()=> signOut(()=>navigate('/', {replace:true}))}>Log Out</button>
             <h1>Our news</h1>
             <BlogFilters postQuery={postQuery} latest={latest} setSearchParams={setSearchParams}/>
             {
