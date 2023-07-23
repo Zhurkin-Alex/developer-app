@@ -1,13 +1,13 @@
 import { useQuery } from '@apollo/client';
 import { GET_LOCATION } from './GET_DATA';
 import PokemonsNumber from './PokemonsNumber';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 
 function Pokemons() {
     // const [pokemons, setPokemons] = useState(String)
 
-    const {data, error, loading} = useQuery(GET_LOCATION);
+    const {data, loading} = useQuery(GET_LOCATION);
     // const {pokemons: {results}} = data;
 
     // const gqlQuery = `query pokemons($limit: Int, $offset: Int) {

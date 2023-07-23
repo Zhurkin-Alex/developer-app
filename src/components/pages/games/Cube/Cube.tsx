@@ -27,25 +27,25 @@ const diceNumbers: Array<UrlToImg> = [
   '/img/cube/cube-6.svg',
 ];
 
-interface CubeProps {
-  curStep: {
-    btn_next: string,
-    btn_roll: string,
-    choose_outcome: string,
-    question_game: string,
-    options: [],
-    userPress: string,
-    userChoice: string,
-    btn_repeat: string,
-  };
-  clickHandler: Function;
-  data: {
-    repeat_url: {
-      url: string,
-      popunder_url: string,
-    },
-  };
-}
+// interface CubeProps {
+//   curStep: {
+//     btn_next: string,
+//     btn_roll: string,
+//     choose_outcome: string,
+//     question_game: string,
+//     options: [],
+//     userPress: string,
+//     userChoice: string,
+//     btn_repeat: string,
+//   };
+//   clickHandler: Function;
+//   data: {
+//     repeat_url: {
+//       url: string,
+//       popunder_url: string,
+//     },
+//   };
+// }
 
 function Cube() {
   const [userChoice, setUserChoice] = useState<CubeValue | 0>();
@@ -57,9 +57,9 @@ function Cube() {
   const [repeat, setRepeat] = useState<number>(0); // repeat
 
   // const { clickHandler, curStep, data } = props;
-  const desktopWidth = 1024;
-  const cubeSizeDesktop = 100;
-  const cubeSizeMobile = 80;
+  // const desktopWidth = 1024;
+  // const cubeSizeDesktop = 100;
+  // const cubeSizeMobile = 80;
   const firstSideCube = 1;
 
   // const step = curStep;
@@ -154,8 +154,8 @@ function Cube() {
     </button>
   );
 
-  const buttonText =
-    (isUserPress && 'userPress') || (userChoice && 'userChoice');
+  // const buttonText =
+  //   (isUserPress && 'userPress') || (userChoice && 'userChoice');
 
   return (
     <div className='cube'>

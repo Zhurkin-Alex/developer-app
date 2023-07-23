@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/client';
 import { GET_LOCATION } from './GET_DATA';
 
 function PokemonsNumber() {
-    const {data, error, loading} = useQuery(GET_LOCATION);
+    const {data, loading} = useQuery(GET_LOCATION);
 
     if (loading) {
         return (

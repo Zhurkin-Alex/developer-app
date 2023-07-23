@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink, Outlet } from 'react-router-dom';
-import Cube from '../../pages/games/Cube/Cube';
+// import Cube from '../../pages/games/Cube/Cube';
 import './AboutGames.scss'
 
 function AboutGames() {

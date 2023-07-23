@@ -8,6 +8,7 @@ interface Posts {
     title: string,
 }
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 function Posts():any {
     // const [postItem, setPosts] = useState([])
     const postItem = useLoaderData() as Posts[]
