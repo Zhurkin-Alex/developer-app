@@ -25,7 +25,7 @@ function Header() {
                     {user.user &&<NavLink to="/pokemons" className={({isActive})=>isActive ? 'active-link' : ''}>Pokemons</NavLink>}
                 </li>
                 <li className="header__link">
-                    {user.user &&<NavLink to="/games" className={({isActive})=>isActive ? 'active-link' : ''}>Games</NavLink>}
+                    {user.user === 'lexus1812141@gmail.com'  && <NavLink to="/games" className={({isActive})=>isActive ? 'active-link' : ''}>Games</NavLink>}
                 </li>
             </ul>
          </header>
