@@ -174,7 +174,7 @@ function Cube() {
                   slidesPerView={1}
                   onSlideChange={(swiper) => {
                     const numberElement = swiper.realIndex + 1;
-                    console.warn(numberElement)
+                    // console.warn(numberElement)
 
                     numberChoseHandler(numberElement);
                   }}
