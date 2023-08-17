@@ -9,7 +9,7 @@ import Layout from '../navigation/Layout/Layout';
 import  {SinglePage}  from '../SinglePage';
 import EditPost from '../pages/pagePosts/EditPost/EditPost';
 import LoginPage from '../LoginPage';
-import RequireAuth from '../../hoc/RequireAuth';
+// import RequireAuth from '../../hoc/RequireAuth';
 import { AuthProvider } from '../../hoc/AuthProvider';
 import Pokemons from '../pages/Pokemons/Pokemons';
 import AboutGames from '../navigation/AboutGames/AboutGames';
@@ -20,9 +20,9 @@ const router = createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={<Layout />}>
     <Route path="login" element={<LoginPage />} />
     <Route index element={
-          <RequireAuth>
+          // <RequireAuth>
             <Home />
-          </RequireAuth>
+          // </RequireAuth>
           }  loader={blogLoader}  />
     <Route path="about/*" element={<AboutPage />}> 
       {/* вложенные компоненты */}

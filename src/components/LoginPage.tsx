@@ -20,7 +20,7 @@ function LoginPage() {
         try {
             const newUser = await createUser(user, email);
             console.log('New user created:', newUser);
-            signIn(user, () => navigate(fromPage, { replace: true }));
+            signIn(email, () => navigate(fromPage, { replace: true }));
           } catch (error) {
             console.error('Error creating user:', error);
             // Обработка ошибки, если не удалось создать пользователя

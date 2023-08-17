@@ -1,28 +1,28 @@
-import {createContext, useEffect, useState} from 'react';
+import {createContext, useEffect, useState, useCallback} from 'react';
 import storageService from '../services/storageService'
 export const AuthContext:any = createContext(null)
 
 export const AuthProvider = ({children}:any) => {
-    const [user, setUser] = useState('string')
+    const [email, setEmail] = useState('string')
     // console.log('user-', user)
 
     useEffect(()=>{
-        const user: string = storageService.get('user') || ''
-        return setUser(user);
-    },[user])
+        const user: string = storageService.get('email') || ''
+        return setEmail(user);
+    },[email])
 
     const signIn = (newUser:'string', cb:any)=>{
-        setUser(newUser)
-        storageService.set('user', newUser);
+        setEmail(newUser)
+        storageService.set('email', newUser);
         cb()
     }
-    const signOut = (cb:any)=>{
-        setUser('')
-        storageService.clear('user');
+    const signOut = useCallback((cb:any)=>{
+        setEmail('')
+        storageService.clear('email');
         cb()
-    }
+    }, [])
 
-    const value = {user, signIn, signOut}
+    const value = {email, signIn, signOut}
 
     return <AuthContext.Provider value={value}>
         {children}
